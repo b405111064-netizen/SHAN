@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>電子名片 — 個人介紹</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">電子名片</div>
+    <div class="controls">
+      <div class="lang-switch">
+        <button id="btn-zh" class="lang active">繁體</button>
+        <button id="btn-en" class="lang">EN</button>
+      </div>
+      <button id="themeToggle" class="theme-btn" aria-label="toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1 data-i18n="name">YUSHAN</h1>
+        <p class="tagline" data-i18n="tagline">那個帶著創造力和生命力北漂的台南女孩！</p>
+        <div class="interests">
+          <a href="#life" class="chip" data-i18n="interest1">排球</a>
+          <a href="#research" class="chip" data-i18n="interest2">實驗研究</a>
+          <a href="#life" class="chip" data-i18n="interest3">設計思維</a>
+        </div>
+        <div class="cta">
+          <a href="#contact" class="btn" data-i18n="contact">聯絡我</a>
+          <a href="#edu" class="btn ghost" data-i18n="about">關於我</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="device">
+          <div class="screen">
+            <div class="sparkles"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="edu" class="detail-section">
+      <h2 class="section-title"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="18" height="10" rx="2" fill="currentColor"/><path d="M12 3v4" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="eduTitle">教育</span></h2>
+      <p data-i18n="eduLoc">地點：台北市信義區，抬頭就是 101</p>
+      <div class="edu-row">
+        <div class="edu-text">
+          <p data-i18n="eduDesc">就讀：北醫（牙體系）。在牙體系的臨床與研究環境中培養對細節的敏銳觀察與手作能力。</p>
+          <p class="muted" data-i18n="toothNote">牙體系：喜歡刻牙與精細手作的過程。</p>
+        </div>
+        <div class="tooth-wrap">
+          <svg id="tooth" viewBox="0 0 64 64" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+            <path id="tooth-shape" d="M32 4c6 0 10 4 12 8 3 6 2 14-1 20-2 4-5 7-5 12 0 6 0 12-6 12s-6-6-6-12c0-5-3-8-5-12-3-6-4-14-1-20 2-4 6-8 12-8z" fill="#ffffff" stroke="#e6e0ff" stroke-width="1.5"/>
+            <path id="carve" d="M20 30c4-2 8-2 12 0 4 2 8 2 12 0" stroke="#caa3ff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div id="drill" class="drill" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path d="M3 21l4-4 7-7 4-4 2 2-4 4-7 7-4 4z" fill="#ffd"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="detail-section">
+      <h2 class="section-title"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 21H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="13" r="3" fill="currentColor"/></svg><span data-i18n="researchTitle">研究 / 專題</span></h2>
+      <p data-i18n="researchDesc">目前專注：成分相關的專題實驗，透過分析與實驗設計研究材料特性與生物相容性。</p>
+      <p data-i18n="researchSkills">技能：實驗設計、資料整理、基本分子/化學分析概念。</p>
+    </section>
+
+    <section id="life" class="detail-section">
+      <h2 class="section-title"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" fill="currentColor"/><path d="M6 12a6 6 0 0112 0" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="lifeTitle">興趣與生活</span></h2>
+      <p data-i18n="lifeP1">排球愛好者：定期參與校內及社區比賽，喜歡團隊合作與挑戰自我。</p>
+      <p data-i18n="lifeP2">創作：喜歡在空閒時間做手作與小設計專案，將創造力用於生活美學。</p>
+      <div class="cute-row">
+        <svg class="cute art-person" viewBox="0 0 24 24" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="11" r="4" fill="#ffd8f8"/><path d="M8 16c2 2 6 2 8 0" stroke="#ff6fc4" stroke-width="1.6" stroke-linecap="round"/><path d="M7 8s1.5-2 5-2 5 2 5 2" stroke="#ff6fc4" stroke-width="1.4" stroke-linecap="round"/><path d="M10 16l4-5" stroke="#ff6fc4" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="cute camera" viewBox="0 0 24 24" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="5" width="16" height="14" rx="4" fill="#ffebff" stroke="#ff7bc9" stroke-width="1.5"/><circle cx="12" cy="11" r="3" fill="#fff" stroke="#ff7bc9" stroke-width="1.5"/><path d="M8 5l1-2h6l1 2" stroke="#ff7bc9" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="cute paint" viewBox="0 0 24 24" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><path d="M6 16l8-8 4 4-8 8-4-4z" fill="#ffdaeb" stroke="#ff7bc9" stroke-width="1.5"/><path d="M10 14l2 2" stroke="#ff5bb5" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+    </section>
+
+    <section id="camera" class="detail-section">
+      <h2 class="section-title"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="18" height="12" rx="4" fill="currentColor"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg><span data-i18n="cameraTitle">記錄生活的鏡頭</span></h2>
+      <p class="story" data-i18n="cameraDesc">社群經營：透過記錄生活大小事，利用自己善於觀察周遭的細膩觀察力，將記錄變成最好的生活夥伴。</p>
+    </section>
+
+    <section id="skill" class="detail-section">
+      <h2 class="section-title"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18l6-12 6 12H6z" fill="currentColor"/></svg><span data-i18n="skillTitle">小小技能</span></h2>
+      <p class="story" data-i18n="skillDesc1">拉花將創作融入每一杯咖啡，也是一種自我療癒的過程。</p>
+      <p class="story" data-i18n="skillDesc2">跳舞：舞出新自我，每一瞬間都不同。</p>
+      <p class="story" data-i18n="skillDesc3">唱歌：用聲音傳遞情感，讓生活充滿節奏與溫度。</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 data-i18n="contactTitle">聯絡我</h2>
+      <p data-i18n="email">電子郵件: B405111064@TMU.EDU.TW</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
